@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Options</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        form {
+            width: 300px;
+            text-align: left;
+        }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        form select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="question1">1. 의사가 권하는 운동만 하라는 말을 들은 적이 있습니까?</label>
+        <select id="question1" name="question1">
+            <option value="Yes">예</option>
+            <option value="No">아니요</option>
+        </select><br>
+        
+        <label for="question2">2. 운동 시 가슴에 통증을 느끼십니까?</label>
+        <select id="question2" name="question2">
+            <option value="Yes">예</option>
+            <option value="No">아니요</option>
+        </select><br>
+        
+        <label for="question3">3. 지난 한 달 동안 운동을 하지 않은 상태에서 가슴에 통증을 느낀 적이 있습니까?</label>
+        <select id="question3" name="question3">
+            <option value="Yes">예</option>
+            <option value="No">아니요</option>
+        </select><br>
+        
+        <label for="question4">4. 현기증으로 균형을 잃거나 의식을 잃은 적이 있습니까?</label>
+        <select id="question4" name="question4">
+            <option value="Yes">예</option>
+            <option value="No">아니요</option>
+        </select><br>
+        
+        <label for="question5">5. 운동 시 뼈나 관절에 문제가 있습니까?</label>
+        <select id="question5" name="question5">
+            <option value="Yes">예</option>
+            <option value="No">아니요</option>
+        </select><br>
+        
+        <label for="question6">6. 현재 고혈압이나 심장질환으로 의사의 처방을 받았습니까?</label>
+        <select id="question6" name="question6">
+            <option value="Yes">예</option>
+            <option value="No">아니요</option>
+        </select><br>
+        
+        <label for="question7">7. 운동을 해서는 안 되는 다른 이유가 있습니까?</label>
+        <select id="question7" name="question7">
+            <option value="Yes">예</option>
+            <option value="No">아니요</option>
+        </select><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
