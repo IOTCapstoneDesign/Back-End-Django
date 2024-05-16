@@ -1,4 +1,13 @@
 from django.db import models
+
+class ExerciseRecord(models.Model):
+    date = models.DateField()
+    description = models.TextField(blank=True)  # description 필드를 blank=True로 수정하여 선택 사항으로 만듭니다.
+
+    def __str__(self):
+        return f"Exercise on {self.date}"
+
+"""
 from django.contrib.auth.models import AbstractUser
 
 class MyModel(models.Model):
@@ -7,7 +16,7 @@ class MyModel(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 class CustomUser(AbstractUser):
     # 사용자 지정 필드 추가
 
@@ -27,3 +36,4 @@ class CustomUser(AbstractUser):
         help_text='Specific permissions for this user.',
         related_query_name='custom_user',
     )
+"""

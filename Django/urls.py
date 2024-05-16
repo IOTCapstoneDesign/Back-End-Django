@@ -12,6 +12,12 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+
+    #path('', views.CustomLoginView.as_view(), name='login'),
+    #path('view/', views.my_view, name='my-view'),
+    #path('signup/', views.signup, name='signup'),
+    #path('option/', views.option, name='option'),  # 옵션 페이지 URL 추가
+    #path('accounts/profile/', RedirectView.as_view(pattern_name='my-view')),
 """
 from django.contrib import admin
 from django.urls import path
@@ -20,9 +26,7 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.CustomLoginView.as_view(), name='login'),
-    path('view/', views.my_view, name='my-view'),
-    path('signup/', views.signup, name='signup'),
-    path('option/', views.option, name='option'),  # 옵션 페이지 URL 추가
-    path('accounts/profile/', RedirectView.as_view(pattern_name='my-view')),
+    path('', views.view_calendar, name='view-calendar'),  # 루트 URL에 연결된 뷰를 view_calendar로 변경
+    path('exercise-record/', views.exercise_record, name='exercise-record'),
+    path('accounts/profile/', RedirectView.as_view(pattern_name='view-calendar')),  # accounts/profile/ URL을 view-calendar로 리디렉션
 ]
